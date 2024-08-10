@@ -70,7 +70,7 @@ model = build_unet(input_shape)
 model.load_weights('model1.keras')
 
 # Load Image
-img = #Image path to be added
+#img = #Image path to be added
 img= cv2.resize(img ,(256, 256))
 img= img/ 255
 img= img[np.newaxis, :, :, :]
