@@ -67,10 +67,10 @@ def build_unet(input_shape):
 # Load model
 input_shape = (256, 256, 3)
 model = build_unet(input_shape)
-model.load_weights('model1.keras')
+model.load_weights('backend/brainseg/image_classification/ai_model/model1.keras')
 
 # Load Image
-#img = #Image path to be added
+img = 
 img= cv2.resize(img ,(256, 256))
 img= img/ 255
 img= img[np.newaxis, :, :, :]
@@ -80,7 +80,7 @@ out_mask = model.predict(img)
 binary_mask = (out_mask > 0.25).astype(np.uint8)
 
 # Save the output image
-overlay = cv2.addWeighted(img, 0.7, binary_mask, 0.3, 0)
+ouptput_img = cv2.addWeighted(img, 0.7, binary_mask, 0.3, 0)
 cv2.imwrite('mri_with_tumor_overlay.png', output_img)
 
 # Add code to save image to server
